@@ -85,10 +85,25 @@ _G.packer_plugins = {
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["conform.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0" },
@@ -96,20 +111,25 @@ _G.packer_plugins = {
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   harpoon = {
     loaded = true,
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-tool-installer.nvim"] = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/mason-tool-installer.nvim",
+    url = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -131,6 +151,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jrc/.local/share/nvim/site/pack/packer/start/nvim-lint",
     url = "https://github.com/mfussenegger/nvim-lint"
+  },
+  ["nvim-lsp-file-operations"] = {
+    loaded = true,
+    path = "/home/jrc/.local/share/nvim/site/pack/packer/start/nvim-lsp-file-operations",
+    url = "https://github.com/antosha417/nvim-lsp-file-operations"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -181,6 +206,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: conform.nvim
+time([[Config for conform.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
+time([[Config for conform.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
@@ -189,10 +218,6 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: conform.nvim
-time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
-time([[Config for conform.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
