@@ -52,6 +52,3 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
--- Tabs
-keymap.set("n", "<Tab>", ":tabn<CR>")
-keymap.set("n", "<S-Tab>", ":tabp<CR>")

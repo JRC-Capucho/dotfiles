@@ -49,6 +49,9 @@ packer.startup(function(use)
 
 	use("fsouza/prettierd")
 
+	use("nvim-tree/nvim-tree.lua")
+	use({ "akinsho/bufferline.nvim", tag = "*" })
+
 	use({
 		"stevearc/conform.nvim",
 		config = function()
@@ -72,4 +75,27 @@ packer.startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
+	use({
+		"dinhhuy258/git.nvim",
+	})
+	use("norcalli/nvim-colorizer.lua")
+	use("windwp/nvim-ts-autotag")
+	use("lewis6991/gitsigns.nvim")
 end)
