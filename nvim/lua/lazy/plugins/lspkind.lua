@@ -1,6 +1,7 @@
 return {
 	"onsails/lspkind.nvim",
 	config = function()
+		local cmp = require("cmp")
 		local lspkind = require("lspkind")
 
 		lspkind.init({
@@ -45,6 +46,15 @@ return {
 				Event = "",
 				Operator = "󰆕",
 				TypeParameter = "",
+			},
+		})
+
+		cmp.setup({
+			formatting = {
+				format = function(entry, vim_item)
+					vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+					return vim_item
+				end,
 			},
 		})
 	end,
