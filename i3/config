@@ -15,6 +15,8 @@
 exec ~/.fehbg
 exec --no-startup-id compton -b -f
 
+exec xrandr --output eDP-1 --mode 1680x1050
+
 # KEYBOARD
 exec setxkbmap -option "ctrl:swapcaps"
 
@@ -86,7 +88,8 @@ floating_modifier Mod1
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod1+Return exec kitty
+bindsym Mod1+Return exec st
+bindsym Mod1+Shift+t exec kitty
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -244,3 +247,4 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 exec i3-config-wizard
+
