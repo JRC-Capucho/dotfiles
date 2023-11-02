@@ -21,8 +21,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "te", ":tabedit<CR>", { silent = true })
 
 -- Split window
-keymap.set("n", "ss", ":split<Return><C-w>w")
-keymap.set("n", "sv", ":vsplit<Return><C-w>w")
+keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
+keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
 
 -- Move window
 keymap.set("", "sh", "<C-w>h")
@@ -51,4 +51,3 @@ keymap.set("n", "N", "Nzzzv")
 -- Copy and Paste system
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
-

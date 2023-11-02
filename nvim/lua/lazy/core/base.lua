@@ -30,6 +30,6 @@ keymap.isfname:append("@-@")
 
 keymap.updatetime = 50
 
-keymap.colorcolumn = "80"
+-- keymap.colorcolumn = "80"
 
-keymap.clipboard:append { 'unnamedplus' }
+keymap.clipboard:append({ "unnamedplus" })
