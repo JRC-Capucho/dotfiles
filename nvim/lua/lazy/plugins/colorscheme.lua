@@ -57,6 +57,9 @@ return {
 	lazy = false,
 	config = function()
 		local osaka = require("solarized-osaka")
-		osaka._load("storm")
+		osaka._load("night")
+		osaka.setup({
+			transparent = true,
+		})
 	end,
 }

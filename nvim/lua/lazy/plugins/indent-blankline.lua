@@ -4,7 +4,8 @@ return {
 	opts = {},
 	config = function()
 		local ibl = require("ibl")
-		local highlight = {
+		ibl.setup({})
+		--[[ local highlight = {
 			"RainbowRed",
 			"RainbowYellow",
 			"RainbowBlue",
@@ -25,8 +26,8 @@ return {
 			vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
 			vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
 			vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-		end)
+		end) ]]
 
-		ibl.setup({ indent = { highlight = highlight } })
+		-- ibl.setup({ indent = { highlight = highlight } })
 	end,
 }

@@ -5,12 +5,18 @@ return {
 		{ "nvim-tree/nvim-web-devicons" }, -- optional
 	},
 	config = function()
-		local lspsaga = require("lspsaga")
+		local saga = require("lspsaga")
 		-- local diagnostic = require("lsp.diagnostic")
 
-		lspsaga.setup({
+		saga.setup({
 			ui = {
 				border = "rounded",
+			},
+			symbol_in_winbar = {
+				enable = false,
+			},
+			lightbulb = {
+				enable = false,
 			},
 			outline = {
 				layout = "float",
