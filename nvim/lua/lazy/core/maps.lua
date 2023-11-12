@@ -51,3 +51,10 @@ keymap.set("n", "N", "Nzzzv")
 -- Copy and Paste system
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
+
+
+-- Move in tmux
+keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
