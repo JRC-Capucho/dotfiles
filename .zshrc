@@ -1,29 +1,135 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# STARSHIP THEME
-# eval "$(starship init zsh)"
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-# powerlevel10k
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="archcraft"
 
-#ZOXIDE
-eval "$(zoxide init zsh)"
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME="archcraft"
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# HIGHLIGHTING 
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# ASDF 
-. "$HOME/.asdf/asdf.sh"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-## AUTOCOMPLETION
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' menu select
-zstyle ':completion::complete*' gain-privileges 1
+# Uncomment one of the following lines to change the auto-update behavior
+zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git 
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  z
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 #
-# Aliases
-#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# On-demand rehash
+zshcache_time="$(date +%s%N)"
+
+autoload -Uz add-zsh-hook
+
+rehash_precmd() {
+  if [[ -a /var/cache/zsh/pacman ]]; then
+    local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
+    if (( zshcache_time < paccache_time )); then
+      rehash
+      zshcache_time="$paccache_time"
+    fi
+  fi
+}
+
+add-zsh-hook -Uz precmd rehash_precmd
+
+# omz
+alias zshconfig="geany ~/.zshrc"
+alias ohmyzsh="thunar ~/.oh-my-zsh"
+
+. /opt/asdf-vm/asdf.sh
+
+neofetch | lolcat
+setxkbmap -option caps:ctrl_modifier
 
 # TMUX
 alias ta='tmux attach -t'
@@ -32,244 +138,15 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
-alias tmuxconf='$EDITOR $ZSH_TMUX_CONFIG'
 
 # LIST
-
 alias ls='eza --icons -F -H --group-directories-first --git -1'
 alias la="ls -A"
 alias ll="ls -alF"
 alias lla="ll -A"
 
-
-# NEOVIM
+# VIM
 alias vim="nvim"
 
 # GIT
-
 alias g="git"
-
-# #
-# Defines Docker aliases.
-#
-# Author:
-#   François Vantomme <akarzim@gmail.com>
-#
-
-
-# Docker
-alias dk='docker'
-alias dka='docker attach'
-alias dkb='docker build'
-alias dkd='docker diff'
-alias dkdf='docker system df'
-alias dke='docker exec'
-alias dkE='docker exec -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t'
-alias dkh='docker history'
-alias dki='docker images'
-alias dkin='docker inspect'
-alias dkim='docker import'
-alias dkk='docker kill'
-alias dkkh='docker kill -s HUP'
-alias dkl='docker logs'
-alias dkL='docker logs -f'
-alias dkli='docker login'
-alias dklo='docker logout'
-alias dkls='docker ps'
-alias dkp='docker pause'
-alias dkP='docker unpause'
-alias dkpl='docker pull'
-alias dkph='docker push'
-alias dkps='docker ps'
-alias dkpsa='docker ps -a'
-alias dkr='docker run'
-alias dkR='docker run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm'
-alias dkRe='docker run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm --entrypoint /bin/bash'
-alias dkRM='docker system prune'
-alias dkrm='docker rm'
-alias dkrmi='docker rmi'
-alias dkrn='docker rename'
-alias dks='docker start'
-alias dkS='docker restart'
-alias dkss='docker stats'
-alias dksv='docker save'
-alias dkt='docker tag'
-alias dktop='docker top'
-alias dkup='docker update'
-alias dkV='docker volume'
-alias dkv='docker version'
-alias dkw='docker wait'
-alias dkx='docker stop'
-
-## Container (C)
-alias dkC='docker container'
-alias dkCa='docker container attach'
-alias dkCcp='docker container cp'
-alias dkCd='docker container diff'
-alias dkCe='docker container exec'
-alias dkCE='docker container exec -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t'
-alias dkCin='docker container inspect'
-alias dkCk='docker container kill'
-alias dkCl='docker container logs'
-alias dkCL='docker container logs -f'
-alias dkCls='docker container ls'
-alias dkCp='docker container pause'
-alias dkCpr='docker container prune'
-alias dkCrn='docker container rename'
-alias dkCS='docker container restart'
-alias dkCrm='docker container rm'
-alias dkCr='docker container run'
-alias dkCR='docker container run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm'
-alias dkCRe='docker container run -e COLUMNS=`tput cols` -e LINES=`tput lines` -i -t --rm --entrypoint /bin/bash'
-alias dkCs='docker container start'
-alias dkCss='docker container stats'
-alias dkCx='docker container stop'
-alias dkCtop='docker container top'
-alias dkCP='docker container unpause'
-alias dkCup='docker container update'
-alias dkCw='docker container wait'
-
-## Image (I)
-alias dkI='docker image'
-alias dkIb='docker image build'
-alias dkIh='docker image history'
-alias dkIim='docker image import'
-alias dkIin='docker image inspect'
-alias dkIls='docker image ls'
-alias dkIpr='docker image prune'
-alias dkIpl='docker image pull'
-alias dkIph='docker image push'
-alias dkIrm='docker image rm'
-alias dkIsv='docker image save'
-alias dkIt='docker image tag'
-
-## Volume (V)
-alias dkV='docker volume'
-alias dkVin='docker volume inspect'
-alias dkVls='docker volume ls'
-alias dkVpr='docker volume prune'
-alias dkVrm='docker volume rm'
-
-## Network (N)
-alias dkN='docker network'
-alias dkNs='docker network connect'
-alias dkNx='docker network disconnect'
-alias dkNin='docker network inspect'
-alias dkNls='docker network ls'
-alias dkNpr='docker network prune'
-alias dkNrm='docker network rm'
-
-## System (Y)
-alias dkY='docker system'
-alias dkYdf='docker system df'
-alias dkYpr='docker system prune'
-
-## Stack (K)
-alias dkK='docker stack'
-alias dkKls='docker stack ls'
-alias dkKps='docker stack ps'
-alias dkKrm='docker stack rm'
-
-## Swarm (W)
-alias dkW='docker swarm'
-
-## CleanUp (rm)
-# Clean up exited containers (docker < 1.13)
-alias dkrmC='docker rm $(docker ps -qaf status=exited)'
-
-# Clean up dangling images (docker < 1.13)
-alias dkrmI='docker rmi $(docker images -qf dangling=true)'
-
-# Pull all tagged images
-alias dkplI='docker images --format "{{ .Repository }}" | grep -v "^<none>$" | xargs -L1 docker pull'
-
-# Clean up dangling volumes (docker < 1.13)
-alias dkrmV='docker volume rm $(docker volume ls -qf dangling=true)'
-
-# Docker Machine (m)
-alias dkm='docker-machine'
-alias dkma='docker-machine active'
-alias dkmcp='docker-machine scp'
-alias dkmin='docker-machine inspect'
-alias dkmip='docker-machine ip'
-alias dkmk='docker-machine kill'
-alias dkmls='docker-machine ls'
-alias dkmpr='docker-machine provision'
-alias dkmps='docker-machine ps'
-alias dkmrg='docker-machine regenerate-certs'
-alias dkmrm='docker-machine rm'
-alias dkms='docker-machine start'
-alias dkmsh='docker-machine ssh'
-alias dkmst='docker-machine status'
-alias dkmS='docker-machine restart'
-alias dkmu='docker-machine url'
-alias dkmup='docker-machine upgrade'
-alias dkmv='docker-machine version'
-alias dkmx='docker-machine stop'
-
-# Docker Compose (c)
-if [[ $(uname -s) == "Linux" ]]; then
-  alias dkc='docker-compose'
-  alias dkcb='docker-compose build'
-  alias dkcB='docker-compose build --no-cache'
-  alias dkccf='docker-compose config'
-  alias dkccr='docker-compose create'
-  alias dkcd='docker-compose down'
-  alias dkce='docker-compose exec -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-  alias dkcev='docker-compose events'
-  alias dkci='docker-compose images'
-  alias dkck='docker-compose kill'
-  alias dkcl='docker-compose logs'
-  alias dkcL='docker-compose logs -f'
-  alias dkcls='docker-compose ps'
-  alias dkcp='docker-compose pause'
-  alias dkcP='docker-compose unpause'
-  alias dkcpl='docker-compose pull'
-  alias dkcph='docker-compose push'
-  alias dkcpo='docker-compose port'
-  alias dkcps='docker-compose ps'
-  alias dkcr='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-  alias dkcR='docker-compose run -e COLUMNS=`tput cols` -e LINES=`tput lines` --rm'
-  alias dkcrm='docker-compose rm'
-  alias dkcs='docker-compose start'
-  alias dkcsc='docker-compose scale'
-  alias dkcS='docker-compose restart'
-  alias dkct='docker-compose top'
-  alias dkcu='docker-compose up'
-  alias dkcU='docker-compose up -d'
-  alias dkcv='docker-compose version'
-  alias dkcx='docker-compose stop'
-else
-  alias dkc='docker compose'
-  alias dkcb='docker compose build'
-  alias dkcB='docker compose build --no-cache'
-  alias dkccp='docker compose copy'
-  alias dkccr='docker compose create'
-  alias dkccv='docker compose convert'
-  alias dkcd='docker compose down'
-  alias dkce='docker compose exec -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-  alias dkcev='docker compose events'
-  alias dkci='docker compose images'
-  alias dkck='docker compose kill'
-  alias dkcl='docker compose logs'
-  alias dkcL='docker compose logs -f'
-  alias dkcls='docker compose ls'
-  alias dkcp='docker compose pause'
-  alias dkcP='docker compose unpause'
-  alias dkcpl='docker compose pull'
-  alias dkcph='docker compose push'
-  alias dkcpo='docker compose port'
-  alias dkcps='docker compose ps'
-  alias dkcr='docker compose run -e COLUMNS=`tput cols` -e LINES=`tput lines`'
-  alias dkcR='docker compose run -e COLUMNS=`tput cols` -e LINES=`tput lines` --rm'
-  alias dkcrm='docker compose rm'
-  alias dkcs='docker compose start'
-  alias dkcsc='docker-compose scale'
-  alias dkcS='docker compose restart'
-  alias dkct='docker compose top'
-  alias dkcu='docker compose up'
-  alias dkcU='docker compose up -d'
-  alias dkcv='docker-compose version'
-  alias dkcx='docker compose stop'
-fi
-
