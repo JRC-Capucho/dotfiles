@@ -21,6 +21,7 @@
     ba = branch -a
     bm = branch --merged
     bn = branch --no-merged
+    staash = stash --all
 [hub]
     protocol = https
 [github]
@@ -30,3 +31,13 @@
 [user]
 	email = joaorobertoc.capucho@gmail.com
 	name = JRC-Capucho
+[gpg]
+  format = ssh
+[branch]
+  sort = -committerdate
+[commit]
+  gpgsign = true
+[column]
+  ui = auto
+[rerere]
+  enabled = true
