@@ -15,8 +15,8 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = "AdventureTime"
 -- config.color_scheme = "Batman"
-config.color_scheme = "Rosé Pine (Gogh)"
--- config.color_scheme = "Poimandres"
+-- config.color_scheme = "Rosé Pine (Gogh)"
+config.color_scheme = "Poimandres"
 
 -- config.color_scheme = "Sonokai (Gogh)"
 -- config.font = wezterm.font("Fira Code")
