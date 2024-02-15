@@ -31,14 +31,14 @@
 [user]
 	email = joaorobertoc.capucho@gmail.com
 	name = JRC-Capucho
-  signingkey = ~/.ssh/id_ed25519.pub
+    signingkey = ~/.ssh/id_ed25519.pub
 [gpg]
-  format = ssh
+    format = ssh
 [branch]
-  sort = -committerdate
+    sort = -committerdate
 [commit]
-  gpgsign = true
+    gpgsign = true
 [column]
-  ui = auto
+    ui = auto
 [rerere]
-  enabled = true
+    enabled = true
