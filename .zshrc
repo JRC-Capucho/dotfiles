@@ -123,7 +123,7 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 # omz
-alias zshconfig="geany ~/.zshrc"
+alias zshconfig="v ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 . /opt/asdf-vm/asdf.sh
@@ -146,7 +146,10 @@ alias ll="ls -alF"
 alias lla="ll -A"
 
 # VIM
-alias vim="nvim"
+alias ="nvim"
 
 # GIT
 alias g="git"
+
+# BIND
+bindkey "^U" backward-kill-line
