@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="archcraft"
+ZSH_THEME="cloud"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME="archcraft"
@@ -71,10 +71,17 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  z
+    git 
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    z
+    node
+    docker
+    docker-compose
+    vscode
+    tmux
+    asdf
+    archlinux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,18 +133,7 @@ add-zsh-hook -Uz precmd rehash_precmd
 alias zshconfig="v ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
-. /opt/asdf-vm/asdf.sh
-
 neofetch | lolcat
-setxkbmap -option caps:ctrl_modifier
-
-# TMUX
-alias ta='tmux attach -t'
-alias tad='tmux attach -d -t'
-alias ts='tmux new-session -s'
-alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tkss='tmux kill-session -t'
 
 # LIST
 alias ls='eza --icons -F -H --group-directories-first --git -1'
@@ -146,10 +142,7 @@ alias ll="ls -alF"
 alias lla="ll -A"
 
 # VIM
-alias ="nvim"
-
-# GIT
-alias g="git"
+alias v="nvim"
 
 # BIND
 bindkey "^U" backward-kill-line
