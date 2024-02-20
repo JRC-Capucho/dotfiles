@@ -146,3 +146,5 @@ alias v="nvim"
 
 # BIND
 bindkey "^U" backward-kill-line
+
+source /etc/environment
