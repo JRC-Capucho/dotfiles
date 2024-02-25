@@ -3,6 +3,9 @@
 ```bash
 tmux \
 neovim \
+zsh \
+lolcat \
+neofetch \
 task \
 ranger \
 eza \
