@@ -1,0 +1,32 @@
+[font.normal]
+family = "JetBrains Mono Nerd Font" 
+style = "Bold" 
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "None"
+opacity = 0.9
+
+[window.padding]
+x = 2
+y = 5
+
+[cursor.style]
+shape = "Block"
+blinking =  "Always"
+
+[cursor]
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = false
+
+[env]
+TERM = "xterm-256color"
+
+[keyboard]
+bindings = [
+	{key = "c", mods = "Alt", action = "Copy" },
+	{key = "v", mods = "Alt", action = "Paste" }
+]
