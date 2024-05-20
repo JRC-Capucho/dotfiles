@@ -20,6 +20,11 @@ config_folder="$HOME/.config"
 
 if [ -d "$config_folder/nvim" ]; then
     rm -rf "$HOME/.config/nvim"
+    rm -rf "$HOME/.local/share/nvim/"
+    rm -rf "$HOME/.local/state/nvim/"
+    rm -rf "$HOME/.cache/nvim/"
+
+    git clone https://github.com/JRC-Capucho/Editor ~/dotfiles/.config/nvim
 fi
 
 if [ -d "$config_folder/tmux" ]; then
@@ -28,6 +33,15 @@ fi
 
 if [ -d "$config_folder/alacritty" ]; then
     rm -rf "$HOME/.config/alacritty"
+fi
+
+
+if [ -d "$config_folder/ranger" ]; then
+    rm -rf "$HOME/.config/ranger"
+fi
+
+if [ -d "$config_folder/i3" ]; then
+    rm -rf "$HOME/.config/i3"
 fi
 
 (cd "$HOME/dotfiles" && stow . )

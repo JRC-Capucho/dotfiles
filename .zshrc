@@ -26,6 +26,10 @@ if [ -d /opt/asdf-vm ]; then
 	. /opt/asdf-vm/asdf.sh
 fi
 
+if [ -d /usr/local/opt/asdf/libexec ]; then
+    . /usr/local/opt/asdf/libexec/asdf.sh
+fi
+
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
