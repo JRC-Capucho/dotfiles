@@ -22,12 +22,10 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-if [ -d /opt/asdf-vm ]; then
-	. /opt/asdf-vm/asdf.sh
-fi
-
-if [ -d /usr/local/opt/asdf/libexec ]; then
-    . /usr/local/opt/asdf/libexec/asdf.sh
+if [ ! -d "$HOME/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+else
+    . "$HOME/.asdf/asdf.sh"
 fi
 
 # Add in Powerlevel10k
