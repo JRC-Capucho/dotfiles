@@ -8,7 +8,7 @@ then
 	makepkg -si
 fi
 
-tools=( neovim tmux zsh alacritty docker lazyvim asdf-vm stow brave-nightly-bin fzf fd ripgrep ranger zoxide unzip git github-cli curl wget httpie bat tldr picom feh)
+tools=( neovim tmux zsh alacritty docker lazygit asdf-vm stow brave-nightly-bin fzf fd ripgrep ranger zoxide unzip git github-cli curl wget httpie bat tldr picom feh)
 
 yay --noconfirm -S --needed "${tools[@]}"
 

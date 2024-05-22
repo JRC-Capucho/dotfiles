@@ -6,7 +6,7 @@ then
 else
 fi
 
-tools=(tmux docker alacritty asdf stow fzf fd ripgrep zoxide ranger unzip git gh bat tldr httpie wget curl)
+tools=(tmux docker alacritty asdf lazygit stow fzf fd ripgrep zoxide ranger unzip git gh bat tldr httpie wget curl)
 for tool in "${tools[@]}"; do
     brew install "${tool}"
 done
