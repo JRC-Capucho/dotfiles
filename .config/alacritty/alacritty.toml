@@ -1,6 +1,6 @@
 [font.normal]
-family = "JetBrains Mono Nerd Font" 
-style = "Bold" 
+family = "ComicShannsMono Nerd Font" 
+style = "bold" 
 
 [shell]
 program = "/bin/zsh"
