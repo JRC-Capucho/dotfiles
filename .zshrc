@@ -2,12 +2,12 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+	# If you're using macOS, you'll want this enabled
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -15,18 +15,13 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-if [ ! -d "$HOME/.asdf" ]; then
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-else
-    . "$HOME/.asdf/asdf.sh"
-fi
 
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -38,12 +33,12 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
+#zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
+#zinit snippet OMZP::aws
+#zinit snippet OMZP::kubectl
+#zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -88,6 +83,8 @@ if command -v xdg-open &> /dev/null
 then
 	alias open='xdg-open'
 fi
+
+. /opt/asdf-vm/asdf.sh
 
 # Shell integrations
 eval "$(fzf --zsh)"
