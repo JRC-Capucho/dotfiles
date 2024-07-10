@@ -24,7 +24,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 
 # Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -73,11 +76,17 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
+alias l="ls -lh --color"
 alias ls='ls --color'
 alias v='nvim'
 alias c='clear'
 alias d='docker'
 alias g='git'
+
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
 
 if command -v xdg-open &> /dev/null
 then

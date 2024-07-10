@@ -32,6 +32,8 @@ default_border pixel 1
 
 smart_gaps on
 
+focus_follows_mouse no
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -130,7 +132,7 @@ set $ws1 "1:  Terminal"
 set $ws2 "2:  Firefox"
 set $ws3 "3:  VMWare"
 set $ws4 "4:  Spotify"
-set $ws5 "5:  Shutter"
+set $ws5 "5:  Steam"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -213,16 +215,16 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 # finds out, if available)
 bar {
 
-	i3bar_command i3bar --transparency
-	tray_output none
-        status_command i3status -c $HOME/.config/i3status/i3status.conf
-        status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
-	font pango:Droid Sans Mono 10
+  i3bar_command i3bar --transparency
+  # tray_output none
+
+    status_command i3status -c $HOME/.config/i3status/i3status.conf
+    status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
+
+  font pango:Droid Sans Mono 10
 }
 
 # Allocate applications to workspaces
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws4
-
-
-
+for_window [class="steam"] move to workspace $ws5 
