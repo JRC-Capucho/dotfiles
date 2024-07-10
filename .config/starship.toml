@@ -91,8 +91,8 @@ add_newline = true
 
 [character]
 format = "$symbol "
-success_symbol = "[◉](bold italic bright-yellow)"
-error_symbol = "[⊘](italic purple)"
+success_symbol = "[󰐝](bold italic bright-red)"
+error_symbol = "[󰐝](italic purple)"
 
 [env_var.VIMSHELL] # vim subshell
 format = "[$env_value]($style)"
@@ -100,8 +100,8 @@ style = 'green italic'
 
 [sudo]
 format = "[$symbol]($style)"
-style = "italic bright-purple"
-symbol = "󰯙 "
+style = "italic yellow"
+symbol = " 󰯙 "
 disabled = false
 
 [username]
