@@ -54,3 +54,5 @@
     ui = auto
 [rerere]
     enabled = true
+[init]
+	defaultBranch = master

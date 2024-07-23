@@ -82,6 +82,7 @@ alias v='nvim'
 alias c='clear'
 alias d='docker'
 alias g='git'
+alias s="kitten ssh"
 
 alias t="tmux"
 alias ta="t a -t"
@@ -98,6 +99,9 @@ fi
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+
+# export PATH=$PATH:$HOME/.asdf/installs/golang/1.22.5/packages/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
