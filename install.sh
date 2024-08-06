@@ -38,8 +38,6 @@ re2c /
 ripgrep /
 rofi /
 spotify /
-sqlite /
-steam /
 stow /
 sudo /
 thunar /
@@ -58,6 +56,16 @@ whatsapp-nativefier /
 whatsapp-nativefier-debug /
 yay /
 zoxide /
-zsh 
+zsh /
+ttf-cousine-nerd /
+ttf-work-sans / 
+ttf-firacode-nerd / 
+otf-monaspace-bin /
+lazygit /
+udisks2 /
+cava /
+dunst /
+llvm /
+flameshot 
 
 stow $HOME/dotfiles/

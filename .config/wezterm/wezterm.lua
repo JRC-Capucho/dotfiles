@@ -1,7 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "One Dark (Gogh)",
+	color_scheme = "Catppuccin Mocha",
+	-- color_scheme = "Poimandres",
 	font = wezterm.font("Geist Mono", { weight = "Regular", stretch = "Normal", style = "Normal" }),
 	font_size = 12.0,
 	window_background_opacity = 0.9,
