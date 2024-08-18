@@ -22,13 +22,6 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-
-# Add in Powerlevel10k
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -38,11 +31,21 @@ zinit light Aloxaf/fzf-tab
 # Add in snippets
 #zinit snippet OMZP::git
 zinit snippet OMZP::sudo
+zinit snippet OMZP::asdf
 zinit snippet OMZP::archlinux
 #zinit snippet OMZP::aws
 #zinit snippet OMZP::kubectl
 #zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+
+zi snippet OMZL::git.zsh
+
+zi snippet OMZP::git
+zi cdclear -q # <- forget completions provided up to this moment
+
+setopt promptsubst
+
+zi snippet OMZT::robbyrussell
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -75,26 +78,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias l="ls -lh --color"
-alias ls='ls --color'
-alias v='nvim'
-alias c='clear'
-alias d='docker'
-alias g='git'
-alias s="kitten ssh"
-
-alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new -t"
 
 if command -v xdg-open &> /dev/null
 then
 	alias open='xdg-open'
 fi
-
-. /opt/asdf-vm/asdf.sh
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -105,3 +93,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
