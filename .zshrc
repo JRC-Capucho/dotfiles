@@ -22,6 +22,8 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+zinit light spaceship-prompt/spaceship-prompt
+
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -38,14 +40,6 @@ zinit snippet OMZP::archlinux
 #zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
-zi snippet OMZL::git.zsh
-
-zi snippet OMZP::git
-zi cdclear -q # <- forget completions provided up to this moment
-
-setopt promptsubst
-
-zi snippet OMZT::robbyrussell
 
 # Load completions
 autoload -Uz compinit && compinit
