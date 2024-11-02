@@ -22,8 +22,8 @@ unset env
 
 
 # Aliases
-alias l="ls -lh --color"
-alias ls='ls --color'
+alias l="exa -lh --color --icons --git"
+alias ls='exa --color --icons'
 alias v='nvim'
 alias c='clear'
 alias d='docker'
