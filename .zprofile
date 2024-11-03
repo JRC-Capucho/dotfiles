@@ -28,7 +28,6 @@ alias v='nvim'
 alias c='clear'
 alias d='docker'
 alias g='git'
-alias s="kitten ssh"
 
 alias t="tmux"
 alias ta="t a -t"
