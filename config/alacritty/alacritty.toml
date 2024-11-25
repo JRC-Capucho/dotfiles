@@ -1,10 +1,10 @@
 [general]
-import = ["~/.config/alacritty/rose-pine.toml"]
+import = ["~/.config/alacritty/neofusion.toml"]
 
 [window]
 opacity = 0.85
-padding.x = 10
-padding.y = 10
+padding.x = 0
+padding.y = 0
 
 [font]
 
@@ -17,5 +17,8 @@ size = 13
 
 
 [terminal]
-shell.program = "/usr/bin/bash"
+shell.program = "/usr/bin/zsh"
 shell.args = ["-l"]
+
+[env]
+term = "xterm-256color"

@@ -1,0 +1,473 @@
+{
+	"workbench.tree.indent": 20,
+	"workbench.tree.renderIndentGuides": "none",
+	"terminal.integrated.cursorStyle": "line",
+	"editor.cursorBlinking": "expand",
+	"window.nativeTabs": true,
+	/**
+     * Typography
+     **/
+	"editor.suggestFontSize": 14,
+	"editor.suggestLineHeight": 28,
+	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.fontFamily": "JetBrains Mono",
+	"terminal.integrated.lineHeight": 1.4,
+	"editor.fontFamily": "JetBrains Mono",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 14,
+	"editor.lineHeight": 1.5,
+	"editor.renderLineHighlight": "gutter",
+	/**
+     * Better Defaults
+     **/
+	"editor.copyWithSyntaxHighlighting": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.emptySelectionClipboard": false,
+	"workbench.editor.enablePreview": false,
+	"window.newWindowDimensions": "inherit",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"files.trimTrailingWhitespace": true,
+	"diffEditor.renderSideBySide": false,
+	"editor.snippetSuggestions": "top",
+	"editor.detectIndentation": false,
+	"window.nativeFullScreen": false,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"workbench.sideBar.location": "right",
+	"workbench.editor.showTabs": "single",
+	"editor.minimap.enabled": false,
+	"editor.lineNumbers": "relative",
+	/**
+     * Find
+     **/
+	"search.useIgnoreFiles": false,
+	"search.exclude": {
+		// Hide everything in /vendor, except the "laravel" and "livewire" folder.
+		// "**/vendor/{[^l],?[^ai]}*": true,
+		"**/vendor": true,
+		// Hide everything in /public, except "index.php" "**/public/{[^i],?[^n]}*": true, "**/node_modules": true,
+		"**/dist": true,
+		"**/_ide_helper.php": true,
+		"**/composer.lock": true,
+		"**/package-lock.json": true,
+		"storage": true,
+	},
+	"scm.diffDecorations": "gutter",
+	"editor.hover.enabled": true,
+	"editor.matchBrackets": "never",
+	"workbench.tips.enabled": false,
+	"editor.colorDecorators": false,
+	"git.decorations.enabled": false,
+	"workbench.startupEditor": "none",
+	"editor.lightbulb.enabled": "off",
+	"editor.selectionHighlight": false,
+	"editor.overviewRulerBorder": false,
+	"editor.occurrencesHighlight": "off",
+	"problems.decorations.enabled": false,
+	"editor.renderControlCharacters": false,
+	"editor.hideCursorInOverviewRuler": true,
+	"editor.gotoLocation.multipleReferences": "goto",
+	"editor.gotoLocation.multipleDefinitions": "goto",
+	"editor.gotoLocation.multipleDeclarations": "goto",
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"editor.gotoLocation.multipleImplementations": "goto",
+	"editor.gotoLocation.multipleTypeDefinitions": "goto",
+	/**
+     * Full Bleed
+     **/
+	"window.titleBarStyle": "native",
+	/**
+     * Code
+     **/
+	// Include "-" in word selection.
+	"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+	"emmet.includeLanguages": {
+		"blade": "html",
+		"vue-html": "html",
+		"vue": "html"
+	},
+	"files.associations": {
+		".php_cs": "php",
+		".php_cs.dist": "php"
+	},
+	/**
+     * PHP
+     **/
+	"php.suggest.basic": false,
+	/**
+     * VIM
+     **/
+	"vim.showmodename": false,
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.color": "#a9dc7660",
+	"vim.highlightedyank.duration": 250,
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": true,
+	"vim.hlsearch": false,
+	"vim.leader": "<space>",
+	"vim.smartRelativeLine": true,
+	"editor.cursorSurroundingLines": 8,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"g",
+				"r"
+			], // Revert hunk
+			"commands": [
+				"git.revertSelectedRanges"
+			]
+		},
+	],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"f"
+			],
+			"commands": [
+				"editor.action.formatDocument"
+			]
+		},
+		{
+			"before": [
+				"[",
+				"d"
+			],
+			"commands": [
+				"editor.action.marker.next"
+			]
+		},
+		{
+			"before": [
+				"]",
+				"d"
+			],
+			"commands": [
+				"editor.action.marker.prev"
+			]
+		},
+		{
+			"before": [
+				"<C-j>"
+			],
+			"commands": [
+				"editor.action.marker.nextInFiles"
+			]
+		},
+		{
+			"before": [
+				"<C-k>"
+			],
+			"commands": [
+				"editor.action.marker.prevInFiles"
+			]
+		},
+		{
+			"before": [
+				";",
+				"s"
+			],
+			"commands": [
+				"workbench.action.findInFiles"
+			]
+		},
+		{
+			"before": [
+				";",
+				"t"
+			],
+			"commands": [
+				"workbench.action.showAllSymbols"
+			]
+		},
+		{
+			"before": [
+				";",
+				"f"
+			],
+			"commands": [
+				"workbench.action.quickOpen"
+			],
+			"silent": true
+		},
+		/***
+        * LSP
+		*/
+		{
+			"before": [
+				"g",
+				"p",
+				"d"
+			],
+			"commands": [
+				"editor.action.peekDefinition"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"commands": [
+				"editor.action.showDefinitionPreviewHover"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"i"
+			],
+			"commands": [
+				"editor.action.goToImplementation"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"p",
+				"i"
+			],
+			"commands": [
+				"editor.action.peekImplementation"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"q"
+			],
+			"commands": [
+				"editor.action.quickFix"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"r"
+			],
+			"commands": [
+				"editor.action.referenceSearch.trigger"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"t"
+			],
+			"commands": [
+				"editor.action.goToTypeDefinition"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"p",
+				"t"
+			],
+			"commands": [
+				"editor.action.peekTypeDefinition"
+			]
+		},
+		/**
+          * File Explorer
+          */
+		{
+			"before": [
+				"\\"
+			],
+			"commands": [
+				"workbench.view.explorer"
+			]
+		},
+		/**
+		  * Tabs Management
+		  **/
+		{
+			"before": [
+				"H"
+			], // Focus previous tab at the left
+			"commands": [
+				"workbench.action.previousEditor"
+			]
+		},
+		{
+			"before": [
+				"L"
+			], // Focus next tab at the right
+			"commands": [
+				"workbench.action.nextEditor"
+			]
+		},
+		{
+			"before": [
+				"Q"
+			], // Close current tab
+			"after": [
+				"<C-w>",
+				"q"
+			]
+		},
+		/**
+			* Split
+			**/
+		{
+			"before": [
+				"s",
+				"v"
+			], // Split tab vertically
+			"after": [
+				"<C-w>",
+				"v"
+			]
+		},
+		{
+			"before": [
+				"s",
+				"s"
+			], // Split tab horizontally
+			"after": [
+				"<C-w>",
+				"s"
+			]
+		},
+		/**
+				  * Switch panes
+                  **/
+		{
+			"before": [
+				"s",
+				"h"
+			], // Focus split window at left
+			"commands": [
+				"workbench.action.focusLeftGroup"
+			]
+		},
+		{
+			"before": [
+				"s",
+				"j"
+			], // Focus split window at right
+			"commands": [
+				"workbench.action.focusBelowGroup"
+			]
+		},
+		{
+			"before": [
+				"s",
+				"k"
+			], // Focus split window at above
+			"commands": [
+				"workbench.action.focusAboveGroup"
+			]
+		},
+		{
+			"before": [
+				"s",
+				"l"
+			], // Focus split window at below
+			"commands": [
+				"workbench.action.focusRightGroup"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"g",
+				"p"
+			], // Peek Git diff for the changed line
+			"commands": [
+				"editor.action.dirtydiff.next"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"g",
+				"r"
+			], // Revert hunk
+			"commands": [
+				"git.revertSelectedRanges"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"g",
+				"j"
+			], // Jump to next Git change
+			"commands": [
+				"workbench.action.editor.nextChange"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"g",
+				"k"
+			], // Jump to previous Git change
+			"commands": [
+				"workbench.action.editor.previousChange"
+			]
+		}
+	],
+	"git.enableSmartCommit": true,
+	"explorer.confirmDragAndDrop": false,
+	"cSpell.userWords": [
+		"authenticatable",
+		"dispatchable",
+		"endregion",
+		"fastify",
+		"is",
+		"laravel",
+		"linked",
+		"livewire",
+		"lunardelli",
+		"mutators",
+		"queueable",
+		"tailwindcss",
+		"timedoctor",
+		"to"
+	],
+	"editor.cursorStyle": "line",
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "off",
+	"security.workspace.trust.untrustedFiles": "newWindow",
+	"terminal.integrated.gpuAcceleration": "off",
+	"workbench.editor.showIcons": false,
+	"editor.renderWhitespace": "none",
+	"php.validate.enable": false,
+	"emmet.excludeLanguages": [
+		"markdown",
+		"php"
+	],
+	"editor.inlineSuggest.enabled": true,
+	"editor.accessibilitySupport": "off",
+	"filePathBar.pathStyle": "relative",
+	"filePathBar.statusBarAlignment": "left",
+	"projectManager.showProjectNameInStatusBar": false,
+	"breadcrumbs.symbolSortOrder": "type",
+	"files.autoSave": "afterDelay",
+	"breadcrumbs.enabled": false,
+	"gitlens.currentLine.enabled": false,
+	"workbench.activityBar.location": "hidden",
+	"editor.guides.indentation": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"cSpell.language": "en,pt,pt_BR",
+	"workbench.colorTheme": "Dark Wizard Theme",
+	"workbench.iconTheme": "symbols",
+	"workbench.editor.labelFormat": "short",
+	"explorer.compactFolders": false,
+	"editor.scrollbar.vertical": "hidden",
+	"workbench.statusBar.visible": true,
+	"symbols.hidesExplorerArrows": false,
+	"editor.bracketPairColorization.enabled": false,
+	"editor.formatOnSave": true,
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	}
+}
