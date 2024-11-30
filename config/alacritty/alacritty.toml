@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/neofusion.toml"]
+import = ["~/.config/alacritty/rose-pine.toml"]
 
 [window]
 opacity = 0.85
