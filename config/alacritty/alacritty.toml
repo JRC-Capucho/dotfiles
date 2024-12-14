@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/rose-pine.toml"]
+import = ["~/.config/alacritty/solarized-osaka.toml"]
 
 [window]
 opacity = 0.85
