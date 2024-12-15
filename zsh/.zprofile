@@ -33,3 +33,8 @@ alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
+alias tkill="for s in \$(tmux list-sessions | awk '{print \$1}' | rg ':' -r '' | fzy); do tmux kill-session -t \$s; done;"
+
+
+
+bindkey -s '^f' 'tmux-sessionizer.sh\n' 
