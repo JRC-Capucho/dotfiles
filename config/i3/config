@@ -33,6 +33,7 @@ default_border pixel 1
 
 smart_gaps on
 
+
 # focus_follows_mouse no
 
 # Start XDG autostart .desktop files using dex. See also
@@ -104,10 +105,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+v split h
+bindsym $mod+z split h
 
 # split in vertical orientation
-bindsym $mod+s split v
+bindsym $mod+x split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -131,11 +132,11 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:  Terminal"
-set $ws2 "2:  Firefox"
-set $ws3 "3:  VMWare"
-set $ws4 "4:  Spotify"
-set $ws5 "5:  Steam"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -181,10 +182,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -192,42 +193,31 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
+
 bindsym $mod+r mode "resize"
-
-# Color shemes for windows 
-set $bgcolor    #523d64
-set $in-bgcolor #363636
-set $text       #ffffff
-set $u-bgcolor  #ff0000
-set $indicator  #a8a3c1
-set $in-text    #969696
-
-#                       border          background      text            indicator (a line which shows where the next window will be placed)     
-client.focused          $bgcolor        $bgcolor        $text           $indicator
-client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
-client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
-client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 
-  i3bar_command i3bar --transparency
-  # tray_output none
+  tray_output primary
 
-    status_command i3status -c $HOME/.config/i3status/i3status.conf
-    status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
+    status_command i3status
 
-  font pango:Ubuntu Nerd Font 10
+    font pango:Ubuntu Nerd Font 10
 }
 
 # Allocate applications to workspaces
-for_window [class="firefox"] move to workspace $ws2
+for_window [class="^.*"] border pixel 2
+                          # class                 border  backgr. text    indicator child_border
+for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577orkspace $ws1
+
+for_window [class="firefox"] move to workspace $ws1
+for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="steam"] move to workspace $ws5 
