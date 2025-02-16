@@ -24,7 +24,11 @@ unset env
 # Aliases
 alias l="exa -lh --color --icons --git"
 alias ls='exa --color --icons'
-alias v='nvim'
+alias v='NVIM_APPNAME=nvim nvim'
+alias lv='NVIM_APPNAME=lazyvim nvim'
+alias lg="lazygit"
+alias ld="lazydocker"
+alias a="php artisan"
 alias c='clear'
 alias d='docker'
 alias g='git'
@@ -34,7 +38,3 @@ alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
 alias tkill="for s in \$(tmux list-sessions | awk '{print \$1}' | rg ':' -r '' | fzy); do tmux kill-session -t \$s; done;"
-
-
-
-bindkey -s '^f' 'tmux-sessionizer.sh\n' 
