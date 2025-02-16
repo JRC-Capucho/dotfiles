@@ -67,7 +67,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -218,6 +218,8 @@ for_window [class="^.*"] border pixel 2
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577orkspace $ws1
 
 for_window [class="firefox"] move to workspace $ws1
+for_window [class="Brave"] move to workspace $ws1
 for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="steam"] move to workspace $ws5 
+for_window [class="Emulator"] floating enabled
