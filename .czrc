@@ -1,5 +1,6 @@
 {
-  "path": "cz-git",
+  "path": "cz-conventional-changelog",
+  "useEmoji": false,
   "scopes": [
     { "name": "auth", "description": "Authentication module" },
     { "name": "ui", "description": "UI components" },
