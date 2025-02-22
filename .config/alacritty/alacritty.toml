@@ -1,0 +1,26 @@
+[general]
+import = ["~/.config/alacritty/solarized-osaka.toml"]
+
+[window]
+opacity = 0.85
+padding.x = 0
+padding.y = 0
+
+[font]
+
+normal.family = "Iosevka Nerd Font"
+# bold.family = "Ubuntu Mono Nerd Font"
+# italic.family = "Ubuntu Mono Nerd Font"
+# bold_italic.family = "Ubuntu Mono Nerd Font"
+
+size = 13
+
+
+[terminal]
+shell.program = "/usr/bin/zsh"
+shell.args = ["-l"]
+
+[env]
+term = "xterm-256color"
+
+

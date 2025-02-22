@@ -1,0 +1,73 @@
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig.work
+
+[include]
+    path = ~/.config/git/themes/catppuccin.gitconfig
+    path = ~/.config/git/aliases
+
+[core]
+    editor = nvim
+    pager = delta
+    ignorecase = false
+    excludesfile = ~/.config/git/ignore
+
+[delta]
+     features = catppuccin-macchiato
+     side-by-side = false
+     true-color = always
+     hyperlinks = true
+     line-numbers = true
+
+[push]
+    default = simple
+
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
+    ui = auto
+
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[hub]
+    protocol = https
+
+[github]
+    user = JRC-Capucho
+
+[ghq]
+    root = ~/personal
+
+[user]
+    email = joaorobertoc.capucho@gmail.com
+    name = JRC-Capucho
+    signingkey = ~/.ssh/id_ed25519.pub
+
+[gpg]
+    format = ssh
+
+[branch]
+    sort = -committerdate
+
+[pull]
+    rebase = false
+
+[commit]
+    gpgsign = true
+
+[rerere]
+    enabled = true
+
+[init]
+    defaultBranch = main
+
+[interactive]
+  diffFilter = delta --color-only
+
