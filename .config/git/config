@@ -2,7 +2,7 @@
   path = ~/.gitconfig.work
 
 [include]
-    path = ~/.config/git/themes/catppuccin.gitconfig
+    path = ~/.config/git/themes/solarized_osaka_dark.gitconfig
     path = ~/.config/git/aliases
 
 [core]
@@ -12,7 +12,7 @@
     excludesfile = ~/.config/git/ignore
 
 [delta]
-     features = catppuccin-macchiato
+     features = solarized-osaka-dark
      side-by-side = false
      true-color = always
      hyperlinks = true

@@ -7,24 +7,29 @@ gui:
   expandFocusedSidePanel: true
   theme:
     activeBorderColor:
-      - "#a6da95"
-      - bold
+      - "#c94c16"
+      - "bold"
     inactiveBorderColor:
-      - "#a5adcb"
-    optionsTextColor:
-      - "#8aadf4"
-    selectedLineBgColor:
-      - "#363a4f"
-    cherryPickedCommitBgColor:
-      - "#494d64"
-    cherryPickedCommitFgColor:
-      - "#b7bdf8"
-    unstagedChangesColor:
-      - "#ed8796"
-    defaultFgColor:
-      - "#cad3f5"
+      - "#664c00"
     searchingActiveBorderColor:
-      - "#eed49f"
+      - "#c94c16"
+      - "bold"
+    optionsTextColor:
+      - "#268bd3"
+    selectedLineBgColor:
+      - "#1a6397"
+    cherryPickedCommitFgColor:
+      - "#268bd3"
+    cherryPickedCommitBgColor:
+      - "#d23681"
+    markedBaseCommitFgColor:
+      - "#268bd3"
+    markedBaseCommitBgColor:
+      - "#b28500"
+    unstagedChangesColor:
+      - "#f55350"
+    defaultFgColor:
+      - "#839395"
   commitLength:
     show: true
   branchColors:

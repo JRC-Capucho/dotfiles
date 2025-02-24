@@ -1,3 +1,6 @@
 yay
 config/tmux/plugins
 .config/tmux/plugins
+.config/vesktop/sessionData
+.config/vesktop/Crashpad
+.config/vesktop/state.json
