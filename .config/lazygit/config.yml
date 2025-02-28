@@ -7,29 +7,24 @@ gui:
   expandFocusedSidePanel: true
   theme:
     activeBorderColor:
-      - "#c94c16"
-      - "bold"
+      - "#a6da95"
+      - bold
     inactiveBorderColor:
-      - "#664c00"
-    searchingActiveBorderColor:
-      - "#c94c16"
-      - "bold"
+      - "#a5adcb"
     optionsTextColor:
-      - "#268bd3"
+      - "#8aadf4"
     selectedLineBgColor:
-      - "#1a6397"
-    cherryPickedCommitFgColor:
-      - "#268bd3"
+      - "#363a4f"
     cherryPickedCommitBgColor:
-      - "#d23681"
-    markedBaseCommitFgColor:
-      - "#268bd3"
-    markedBaseCommitBgColor:
-      - "#b28500"
+      - "#494d64"
+    cherryPickedCommitFgColor:
+      - "#b7bdf8"
     unstagedChangesColor:
-      - "#f55350"
+      - "#ed8796"
     defaultFgColor:
-      - "#839395"
+      - "#cad3f5"
+    searchingActiveBorderColor:
+      - "#eed49f"
   commitLength:
     show: true
   branchColors:
@@ -102,7 +97,7 @@ keybinding:
     pullFiles: "p"
     refresh: "R"
     createPatchOptionsMenu: "<c-p>"
-    nexb: "l"
+    nextTab: "l"
     prevTab: "h"
     nextScreenMode: "+"
     prevScreenMode: "_"

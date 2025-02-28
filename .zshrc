@@ -91,8 +91,6 @@ source ~/.local/bin/scripts/fzf-git.sh
 . ~/.zshenv
 . ~/.zprofile
 
-source ~/.config/fzf/solarized_osaka_dark.sh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

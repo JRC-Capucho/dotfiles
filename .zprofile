@@ -24,7 +24,8 @@ unset env
 # Aliases
 alias l="exa -lh --color --icons --git"
 alias ls='exa --color --icons'
-alias v='nvim'
+alias v='NVIM_APPNAME=nvim nvim'
+alias lv='NVIM_APPNAME=lazyvim nvim'
 alias lg="lazygit"
 alias ld="lazydocker"
 alias c='clear'

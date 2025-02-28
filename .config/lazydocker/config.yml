@@ -6,14 +6,14 @@ gui:
   theme:
     lightTheme: false
     activeBorderColor:
-      - "#c94c16"
-      - "bold"
+      - "#a6da95"
+      - bold
     inactiveBorderColor:
-      - "#664c00"
+      - "#a5adcb"
     optionsTextColor:
-      - "#268bd3"
+      - "#8aadf4"
     selectedLineBgColor:
-      - "#1a6397"
+      - "#363a4f"
   returnImmediately: false
   wrapMainPanel: true
   # Side panel width as a ratio of the screen's width

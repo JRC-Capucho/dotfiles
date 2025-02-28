@@ -1,9 +1,9 @@
+[include]
+    path = ~/.config/git/themes/catppuccin.gitconfig
+    path = ~/.config/git/aliases
+
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig.work
-
-[include]
-    path = ~/.config/git/themes/solarized_osaka_dark.gitconfig
-    path = ~/.config/git/aliases
 
 [core]
     editor = nvim
@@ -12,7 +12,7 @@
     excludesfile = ~/.config/git/ignore
 
 [delta]
-     features = solarized-osaka-dark
+     features = catppuccin-macchiato
      side-by-side = false
      true-color = always
      hyperlinks = true
