@@ -1,4 +1,4 @@
-theme = catppuccin-macchiato
+theme = tokyonight_night
 font-size = 12
 background-blur-radius = 20
 mouse-hide-while-typing = true

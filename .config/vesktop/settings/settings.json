@@ -5,7 +5,7 @@
     "themeLinks": [],
     "eagerPatches": false,
     "enabledThemes": [
-        "solarized_osaka_dark.css"
+        "tokyonight_night.css"
     ],
     "enableReactDevtools": false,
     "frameless": false,
@@ -571,6 +571,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1740371421527
+        "settingsSyncVersion": 1741467610349
     }
 }

@@ -13,4 +13,5 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 export FZF_TMUX_OPTS=" -p90%,70% "
 
 source "$HOME/.local/bin/scripts/fzf-git.sh"
+source "$HOME/.config/fzf/tokyonight_night.sh"
 

@@ -1,5 +1,5 @@
 [include]
-    path = ~/.config/git/themes/catppuccin.gitconfig
+    path = ~/.config/git/themes/tokyonight_night.gitconfig
     path = ~/.config/git/aliases
 
 [includeIf "gitdir:~/work/"]
@@ -12,7 +12,7 @@
     excludesfile = ~/.config/git/ignore
 
 [delta]
-     features = catppuccin-macchiato
+     features = tokyo_night
      side-by-side = false
      true-color = always
      hyperlinks = true
