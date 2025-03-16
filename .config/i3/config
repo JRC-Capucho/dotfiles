@@ -21,15 +21,16 @@ font pango:Ubuntu 10
 
 exec_always "setxkbmap -layout us,br -option 'ctrl:nocaps' -option 'grp:alt_shift_toggle'"
 
-exec_always picom -f
+# picom
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+exec_always dunst &
 
 exec $HOME/.screenlayout/layout.sh
 exec $HOME/.fehbg
 
-gaps inner 5
-gaps outer 2
-
-default_border pixel 1
+# disable screen turning off
+exec_always --no-startup-id xset s 0 0
 
 smart_gaps on
 
@@ -73,7 +74,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec --no-startup-id rofi -show drun -font 'Hack 11'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -200,17 +201,34 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# borders
+default_border pixel 3
+gaps inner 3
+gaps outer 8
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango: FiraCode Nerd Font medium 10
+                status_command i3blocks -c ~/.config/i3/i3blocks.conf
+# status_command i3status
+                position bottom
 
-  tray_output primary
-
-    status_command i3status
-
-    font pango:Ubuntu Nerd Font 10
+                i3bar_command i3bar --transparency
+                colors {
+                        separator          $pink
+#  background         $darkgrey
+                                background	#1e1e2eD9
+                                statusline         $pink
+#                          		border 		        bg		txt	
+                                focused_workspace	#1e1e2eD9		#1e1e2eD9	#b4befe 	
+                                active_workspace	#1e1e2eD9	      	#1e1e2eD9 	#a6adc8		
+                                inactive_workspace	#1e1e2eD9 		#1e1e2eD9	#7f849c		
+                                urgent_workspace	#1e1e2eD9    		#1e1e2eD9  	#a6e3a1  	
+                }
 }
+
 
 # Allocate applications to workspaces
 for_window [class="^.*"] border pixel 2
@@ -223,3 +241,5 @@ for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="steam"] move to workspace $ws5 
 for_window [class="Emulator"] floating enabled
+
+include ~/.config/i3/themes/rose-pine.theme
