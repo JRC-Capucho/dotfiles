@@ -4,3 +4,6 @@ config/tmux/plugins
 .config/vesktop/sessionData
 .config/vesktop/Crashpad
 .config/vesktop/state.json
+.config/vesktop/SingletonCookie
+.config/vesktop/SingletonLock
+.config/vesktop/SingletonSocket
