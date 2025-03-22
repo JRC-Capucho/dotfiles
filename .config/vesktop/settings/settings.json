@@ -5,7 +5,7 @@
     "themeLinks": [],
     "eagerPatches": false,
     "enabledThemes": [
-        "tokyonight_night.css"
+        "rose-pine.theme.css"
     ],
     "enableReactDevtools": false,
     "frameless": false,
@@ -571,6 +571,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1741467610349
+        "settingsSyncVersion": 1742338776634
     }
 }

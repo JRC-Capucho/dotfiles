@@ -31,6 +31,8 @@ exec $HOME/.fehbg
 
 # disable screen turning off
 exec_always --no-startup-id xset s 0 0
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
 
 smart_gaps on
 
