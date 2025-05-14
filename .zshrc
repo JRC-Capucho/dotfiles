@@ -25,25 +25,26 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice depth"1" # git clone depth
-zinit light romkatv/powerlevel10k
-
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+
 # Add in snippets
-zinit snippet OMZP::git
 zinit snippet OMZP::laravel
 zinit snippet OMZP::sudo
-zinit snippet OMZP::asdf
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -88,16 +89,8 @@ eval "$(zoxide init --cmd cd zsh)"
 
 bindkey -r '^G'
 source ~/.local/bin/scripts/fzf-git.sh
-. ~/.zshenv
-. ~/.zprofile
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# pnpm
-export PNPM_HOME="/home/nero/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
