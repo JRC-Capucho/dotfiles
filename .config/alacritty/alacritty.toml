@@ -8,7 +8,7 @@ padding.y = 0
 
 [font]
 
-normal.family = "Iosevka Nerd Font"
+normal.family = "FiraCode Nerd Font"
 # bold.family = "Ubuntu Mono Nerd Font"
 # italic.family = "Ubuntu Mono Nerd Font"
 # bold_italic.family = "Ubuntu Mono Nerd Font"
