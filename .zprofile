@@ -30,7 +30,6 @@ alias ld="lazydocker"
 alias c='clear'
 alias d='docker'
 alias g='git'
-
 alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"

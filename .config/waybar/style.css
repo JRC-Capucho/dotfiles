@@ -1,156 +1,228 @@
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
 * {
-  font-family: JetbrainsMono Nerd Font;
-  font-size: 12px;
-  min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 0px;
+  font-family:
+    "SF Pro Display",
+    -apple-system;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 2px 2px;
+window#waybar {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
 
 #workspaces {
-  border-radius: 5px;
-  margin: 5px;
-  background: #101010;
-  margin-left: 2px;
+  background: transparent;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px;
-  padding: 0.4rem;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  color: #cccccc;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
-  color: #99d1db;
-  border-radius: 5px;
-}
-
-button {
-  background: transparent;
+  opacity: 1;
+  min-width: 30px;
+  color: #ffffff;
 }
 
 #workspaces button:hover {
-  background: #1e1e1e;
-  border: 0px solid transparent;
+  opacity: 1;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: none;
+  border: none;
 }
 
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#cpu,
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+  border-radius: 4px;
+  background-color: #1d1d1d;
+  padding: 20px;
+  margin: 0;
+}
+
+tooltip label {
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+  background-color: transparent;
+  margin: 0 15px 0;
+  padding: 2px 10px 0 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
 #memory,
-#custom-lock,
-#custom-power,
-#custom-weather,
-#custom-uptime,
-#custom-docker {
-  background-color: #101010;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
+#cpu,
+#disk {
+  font-size: 14px;
+  font-weight: normal;
+  color: #ffffff;
+  min-width: 24px;
 }
 
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
 #clock {
-  color: #8caaee;
-  border-radius: 5px;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: normal;
+  transition: background-color 0.5s ease;
+  margin-right: 16px;
 }
 
-#custom-weather {
-  color: #8caaee;
-  margin-left: 0.5rem;
-  border-radius: 5px;
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+#pulseaudio {
+  background-color: transparent;
+  color: #ffffff;
+  min-width: 24px;
 }
 
-#battery {
-  color: #a6d189;
+#pulseaudio.muted {
+  background-color: transparent;
+  color: #ffffff;
 }
 
-#battery.charging {
-  color: #a6d189;
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+#network {
+  background-color: transparent;
+  color: #ffffff;
+  min-width: 24px;
 }
 
-#battery.warning:not(.charging) {
-  color: #e78284;
+#network.ethernet {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#network.wifi {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+#bluetooth.on,
+#bluetooth.connected {
+  background-color: transparent;
+  font-size: 16px;
+  color: #ffffff;
+  min-width: 24px;
+}
+
+#bluetooth.off {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+#tray {
+  background-color: transparent;
+  min-width: 24px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+label:focus {
+  background-color: #000000;
 }
 
 #backlight {
-  color: #e5c890;
+  background-color: #90b1b1;
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
+#network {
+  background-color: #2980b9;
 }
 
-#pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5px;
+#network.disconnected {
+  background-color: #f53c3c;
 }
 
-#custom-docker {
-  color: #85c1dc;
+/* -----------------------------------------------------
+ * Keyboard Layout
+ * ----------------------------------------------------- */
+
+#language {
+  min-width: 24px;
+  color: #ffffff;
+  margin-right: 4px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-#custom-music {
-  color: #ca9ee6;
-  border-radius: 5px;
-}
-
-#custom-lock {
-  color: #babbf1;
-}
-
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
-}
-
-#custom-docker.docker {
-  color: #85c1dc;
-}
-
-#custom-docker.docker-none {
-  color: #737994;
-}
-
-#custom-docker.docker-error {
-  color: #e78284;
-}
-
-#custom-weather.clear {
-  color: #e5c890; /* Sunny yellow */
-}
-
-#custom-weather.cloud {
-  color: #99d1db; /* Light blue */
-}
-
-#custom-weather.rain {
-  color: #8caaee; /* Blue */
-}
-
-#custom-weather.snow {
-  color: #c6d0f5; /* White-ish */
-}
-
-#custom-weather.thunder {
-  color: #ca9ee6; /* Purple */
-}
-
-#custom-weather.fog {
-  color: #b0b4bc; /* Gray */
-}
-
-#custom-weather.error {
-  color: #e78284; /* Red */
-}
+/* -----------------------------------------------------
+ * Custom
+ * ----------------------------------------------------- */
