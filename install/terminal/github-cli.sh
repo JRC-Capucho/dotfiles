@@ -1,1 +1,1 @@
-yay -S --needed github-cli --noconfirm
+yay -S --needed --noconfirm github-cli git git-delta
